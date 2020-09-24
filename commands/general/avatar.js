@@ -14,8 +14,6 @@ exports.run = async (client, message, args) => {
   let avatar = user.displayAvatarURL({size: 4096, dynamic: true});
   
   const embed = new Discord.MessageEmbed()
-  .setTitle(`${user.tag} avatar`)
-  .setDescription(`[Avatar URL of **${user.tag}**](${avatar})`)
   .setColor("#ff99dd")
   .setImage(avatar)
   

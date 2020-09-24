@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     if (!client.config.owners.includes(message.author.id)) module = client.helps.array().filter(x => !x.hide);
     const embed = new Discord.MessageEmbed()
     .setColor("#ff99dd")
-    .setDescription(`Type \`${prefix}help [command]\` to get more specific information about a command.`)
+    .setDescription(`Silahkan Mengetik \`${prefix}help [command]\` Untuk Mendapatkan Penjelasan Lebih Lanjut`)
     .setTitle(`Help Command`)
     .setThumbnail(client.user.avatarURL())
     .setFooter(
