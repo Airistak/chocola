@@ -43,24 +43,24 @@ exports.run = async (client, message, args) => {
       .setAuthor(message.guild.name, message.guild.displayAvatarURL)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
 
-      .setTitle("❯ Serverinfo!")
+      .setTitle("Serverinfo!")
       .addField("General", [
-        `**❯ Name:** ${message.guild.name}`,
-        `**❯ ID:** ${message.guild.id}`,
-        `**❯ Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
-        `**❯ Region:** ${regions[message.guild.region]}`,
-        `**❯ Boost Tier:** ${
+        `**Name:** ${message.guild.name}`,
+        `**ID:** ${message.guild.id}`,
+        `**Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+        `**Region:** ${regions[message.guild.region]}`,
+        `**Boost Tier:** ${
           message.guild.premiumTier
             ? `Tier ${message.guild.premiumTier}`
             : "None"
         }`,
-        `**❯ Explicit Filter:** ${
+        `**Explicit Filter:** ${
           filterLevels[message.guild.explicitContentFilter]
         }`,
-        `**❯ Verification Level:** ${
+        `**Verification Level:** ${
           verificationLevels[message.guild.verificationLevel]
         }`,
-        `**❯ Time Created:** ${moment(message.guild.createdTimestamp).format(
+        `**Time Created:** ${moment(message.guild.createdTimestamp).format(
           "LT"
         )} ${moment(message.guild.createdTimestamp).format("LL")} ${moment(
           message.guild.createdTimestamp
@@ -69,38 +69,38 @@ exports.run = async (client, message, args) => {
       ])
 
       .addField("Statistics", [
-        `**❯ Role Count:** ${roles.length}`,
-        `**❯ Emoji Count:** ${emojis.size}`,
-        `**❯ Regular Emoji Count:** ${
+        `**Role Count:** ${roles.length}`,
+        `**Emoji Count:** ${emojis.size}`,
+        `**Regular Emoji Count:** ${
           emojis.filter(emoji => !emoji.animated).size
         }`,
-        `**❯ Animated Emoji Count:** ${
+        `**Animated Emoji Count:** ${
           emojis.filter(emoji => emoji.animated).size
         }`,
-        `**❯ Member Count:** ${message.guild.memberCount}`,
-        `**❯ Humans:** ${members.filter(member => !member.user.bot).size}`,
-        `**❯ Bots:** ${members.filter(member => member.user.bot).size}`,
-        `**❯ Text Channels:** ${
+        `**Member Count:** ${message.guild.memberCount}`,
+        `**Humans:** ${members.filter(member => !member.user.bot).size}`,
+        `**Bots:** ${members.filter(member => member.user.bot).size}`,
+        `**Text Channels:** ${
           channels.filter(channel => channel.type === "text").size
         }`,
-        `**❯ Voice Channels:** ${
+        `**Voice Channels:** ${
           channels.filter(channel => channel.type === "voice").size
         }`,
-        `**❯ Boost Count:** ${message.guild.premiumSubscriptionCount || "0"}`,
+        `**Boost Count:** ${message.guild.premiumSubscriptionCount || "0"}`,
         "\u200b"
       ])
 
       .addField("Presence", [
-        `**❯ Online:** ${
+        `**Online:** ${
           members.filter(member => member.presence.status === "online").size
         }`,
-        `**❯ Idle:** ${
+        `**Idle:** ${
           members.filter(member => member.presence.status === "idle").size
         }`,
-        `**❯ Do Not Disturb:** ${
+        `**Do Not Disturb:** ${
           members.filter(member => member.presence.status === "dnd").size
         }`,
-        `**❯ Offline:** ${
+        `**Offline:** ${
           members.filter(member => member.presence.status === "offline").size
         }`,
         "\u200b"
